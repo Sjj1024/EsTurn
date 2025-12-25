@@ -1,5 +1,7 @@
-import { privateKey, publickKey } from '@/config'
 import JSEncrypt from 'jsencrypt'
+
+export const publickKey = import.meta.env.VITE_PUBLIC_KEY || ''
+export const privateKey = import.meta.env.VITE_PRIVATE_KEY || ''
 
 export const rsaEncode = (content: string) => {
     var encrypt = new JSEncrypt()
