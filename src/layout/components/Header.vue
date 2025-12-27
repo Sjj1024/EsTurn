@@ -130,9 +130,6 @@
                     </template>
                 </el-dropdown>
             </div>
-            <div class="titlebar">
-                <TitleBar></TitleBar>
-            </div>
         </div>
     </div>
 </template>
@@ -211,6 +208,7 @@ const changeLang = (lang: string) => {
     border-bottom: solid 1px var(--el-menu-border-color);
     display: flex;
     justify-content: space-between;
+    padding: 0 20px;
 
     .logo {
         display: flex;
