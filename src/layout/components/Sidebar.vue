@@ -51,8 +51,6 @@ import logo from '@/assets/image/logo.png'
 
 const router = useRouter()
 
-console.log('routes----', routes)
-
 const defaultMenu = localStorage.getItem('menuIndex')
     ? (localStorage.getItem('menuIndex') as string)
     : '0'

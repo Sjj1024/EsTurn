@@ -27,10 +27,21 @@ const routes: Array<RouteRecordRaw> = [
                 meta: {
                     requiresAuth: false,
                     show: true,
-                    title: '我的资源',
+                    title: 'Github文件',
                     icon: 'FolderOpened',
                 },
                 component: () => import('@/views/files/index.vue'),
+            },
+            {
+                path: 'cloudflare',
+                name: 'cloudflare',
+                meta: {
+                    requiresAuth: false,
+                    show: true,
+                    title: 'Cloudflare',
+                    icon: 'MostlyCloudy',
+                },
+                component: () => import('@/views/cloudflare/index.vue'),
             },
             {
                 path: 'goods',
