@@ -1,9 +1,13 @@
 <template>
-    <div>Cloudflare</div>
+    <div>cloudflare</div>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { onMounted } from 'vue'
+
+onMounted(() => {
+    console.log('111')
+})
 </script>
 
 <style scoped></style>

@@ -1,9 +1,8 @@
-import { HttpVerb, fetch } from '@tauri-apps/api/http'
+import { fetch } from '@tauri-apps/api/http'
 import { useUserStore } from '@/stores/user'
 import { Body } from '@tauri-apps/api/http'
 
-const server = 'https://api.github.com'
-const baseURL = `${server}`
+const baseURL = import.meta.env.VITE_GITHUB_API
 const userStore = useUserStore()
 
 const BODY_TYPE = {
