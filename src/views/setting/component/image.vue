@@ -5,7 +5,7 @@
             <el-select
                 v-model="userStore.cdnLink"
                 class="m-2"
-                placeholder="默认Staticaly"
+                placeholder="默认GitHub"
                 @change="handlerCdn"
             >
                 <el-option
@@ -46,51 +46,32 @@ const userStore = useUserStore()
 
 const linkOpt = [
     {
-        value: `https://cdn.staticaly.com/gh/{{owner}}/{{repo}}@{{branch}}/{{path}}`,
-        label: 'Staticaly',
+        value: `https://gh-proxy.org/`,
+        label: 'cloudflare',
     },
     {
-        value: `https://jsd.cdn.zzko.cn/gh/{{owner}}/{{repo}}@{{branch}}/{{path}}`,
-        label: 'ChinaJsDelivr',
+        value: `https://hk.gh-proxy.org/`,
+        label: 'cloudflare香港',
     },
     {
-        value: `https://cdn.jsdelivr.net/gh/{{owner}}/{{repo}}@{{branch}}/{{path}}`,
-        label: 'jsDelivr',
+        value: `https://cdn.gh-proxy.org/`,
+        label: 'Fastly',
     },
     {
-        value: `https://github.com/{{owner}}/{{repo}}/raw/{{branch}}/{{path}}`,
+        value: `https://edgeone.gh-proxy.org/`,
+        label: 'edgeone',
+    },
+    {
+        value: ``,
         label: 'GitHub',
-    },
-    {
-        value: 'https://{{owner}}.github.io/{{repo}}/{{path}}',
-        label: 'GitHub IO',
     },
 ]
 
 const handlerCdn = (val: string) => {
     // userStore.setFileCdn(val)
     console.log('设置的fileCdn模板是:', val)
-    const resCdn = val
-        .replace('{{owner}}', userStore.gitName)
-        .replace('{{repo}}', userStore.gitRepo)
-        .replace('{{branch}}', userStore.gitBranch)
-        .replace('{{path}}', '')
-    console.log('真正的cdn值：', resCdn)
-    userStore.setFileCdn(resCdn)
-    console.log('设置后的cdn值是:', userStore.fileCdn)
+    userStore.setFileCdn(val)
 }
-
-const autoLink = ref(false)
-const autoLinkOpt = [
-    {
-        value: true,
-        label: '开启',
-    },
-    {
-        value: false,
-        label: '关闭',
-    },
-]
 
 // 图片压缩
 const zipMethod = ref('webP')
@@ -106,16 +87,6 @@ const zipMethodOpt = [
     {
         value: 'avif',
         label: 'avif',
-    },
-]
-
-// 图片水印设置
-const waterSet = ref('暂不支持设置')
-
-const waterOpt = [
-    {
-        value: 'souLink',
-        label: '暂不支持设置',
     },
 ]
 

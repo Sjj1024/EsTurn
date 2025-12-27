@@ -127,8 +127,6 @@ import { useFileStore } from '@/stores/files'
 import useTheme from '@/hooks/theme'
 import { useI18n } from 'vue-i18n'
 import { timestampToTime } from '@/utils/index'
-import { getApiLimit } from '@/utils/request'
-import TitleBar from '@/components/titleBar.vue'
 import { getVersion } from '@tauri-apps/api/app'
 import { onMounted, ref } from 'vue'
 
@@ -139,7 +137,6 @@ onMounted(async () => {
     appVersion.value = '当前版本: V' + version
 })
 
-getApiLimit()
 const { locale } = useI18n()
 const userStore = useUserStore()
 

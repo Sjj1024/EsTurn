@@ -1611,7 +1611,7 @@ const getType = (fileType: string, curFile: any) => {
         ) {
             // 图片格式: 加入图片预览列表
             curFile.path &&
-                imgPreList.push(`https://hk.gh-proxy.org/${curFile.html_url}`)
+                imgPreList.push(`${uStore.fileCdn}${curFile.html_url}`)
             return 'picture'
         } else if (
             [
@@ -1711,8 +1711,8 @@ const getFileList = (path?: string | null) => {
                                         .toFixed(2)
                                         .toString() + 'M',
                                 sha: cur.sha,
-                                openLink: `https://hk.gh-proxy.org/${cur.html_url}`,
-                                downLink: `https://hk.gh-proxy.org/${cur.html_url}`,
+                                openLink: `${uStore.fileCdn}${cur.html_url}`,
+                                downLink: `${uStore.fileCdn}${cur.html_url}`,
                                 htmlLink: cur.html_url,
                                 creatTime: '2021-08-22',
                                 selected: false,
