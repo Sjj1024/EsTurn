@@ -4,9 +4,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
-import { ref, reactive } from 'vue'
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .main-box {

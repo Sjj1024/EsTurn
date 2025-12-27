@@ -208,7 +208,6 @@ const changeLang = (lang: string) => {
     border-bottom: solid 1px var(--el-menu-border-color);
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
 
     .logo {
         display: flex;

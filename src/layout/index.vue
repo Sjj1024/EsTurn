@@ -1,10 +1,16 @@
 <template>
     <div class="common-layout">
-        <Header></Header>
-        <div class="bar-main">
+        <el-container>
             <Sidebar class="bar"></Sidebar>
-            <AppMain class="main-box"></AppMain>
-        </div>
+            <el-container>
+                <el-header>
+                    <Header></Header>
+                </el-header>
+                <el-main>
+                    <AppMain></AppMain>
+                </el-main>
+            </el-container>
+        </el-container>
     </div>
 </template>
 
