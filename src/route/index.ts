@@ -43,118 +43,118 @@ const routes: Array<RouteRecordRaw> = [
                 },
                 component: () => import('@/views/share/index.vue'),
             },
-            {
-                path: 'chatgpt',
-                name: 'chatgpt',
-                component: () => import('@/views/chatgpt/index.vue'),
-                meta: {
-                    requiresAuth: false,
-                    show: true,
-                    title: 'ChatGPT',
-                    icon: 'ChatLineRound',
-                },
-            },
-            {
-                path: 'article',
-                name: 'article',
-                meta: {
-                    requiresAuth: false,
-                    show: true,
-                    title: '文章管理',
-                    icon: 'Edit',
-                },
-                children: [
-                    {
-                        path: 'list',
-                        name: 'list',
-                        meta: {
-                            requiresAuth: false,
-                            show: true,
-                            title: '文章列表',
-                            icon: 'Document',
-                        },
-                        component: () => import('@/views/article/index.vue'),
-                    },
-                    {
-                        path: 'publish',
-                        name: 'publish',
-                        meta: {
-                            requiresAuth: false,
-                            show: true,
-                            title: '发布文章',
-                            icon: 'Document',
-                        },
-                        component: () => import('@/views/publish/index.vue'),
-                    },
-                    {
-                        path: 'category',
-                        name: 'category',
-                        meta: {
-                            requiresAuth: false,
-                            show: true,
-                            title: '分类管理',
-                            icon: 'MessageBox',
-                        },
-                        component: () => import('@/views/category/index.vue'),
-                    },
-                ],
-            },
-            {
-                path: 'web',
-                name: 'web',
-                meta: {
-                    requiresAuth: false,
-                    show: true,
-                    title: '网站管理',
-                    icon: 'Monitor',
-                },
-                children: [
-                    {
-                        path: 'set',
-                        name: 'set',
-                        meta: {
-                            requiresAuth: false,
-                            show: true,
-                            title: '网站设置',
-                            icon: 'Document',
-                        },
-                        component: () => import('@/views/webSet/index.vue'),
-                    },
-                    {
-                        path: 'theme',
-                        name: 'theme',
-                        meta: {
-                            requiresAuth: false,
-                            show: true,
-                            title: '主题样式',
-                            icon: 'Document',
-                        },
-                        component: () => import('@/views/theme/index.vue'),
-                    },
-                    {
-                        path: 'analysis',
-                        name: 'analysis',
-                        meta: {
-                            requiresAuth: false,
-                            show: true,
-                            title: '统计管理',
-                            icon: 'MessageBox',
-                        },
-                        component: () => import('@/views/analysis/index.vue'),
-                    },
-                ],
-            },
-            {
-                path: 'tools',
-                name: 'tools',
-                component: () => import('@/views/tools/index.vue'),
-                meta: {
-                    requiresAuth: false,
-                    show: true,
-                    title: '插件工具',
-                    icon: 'SetUp',
-                },
-            },
+            // {
+            //     path: 'chatgpt',
+            //     name: 'chatgpt',
+            //     component: () => import('@/views/chatgpt/index.vue'),
+            //     meta: {
+            //         requiresAuth: false,
+            //         show: true,
+            //         title: 'ChatGPT',
+            //         icon: 'ChatLineRound',
+            //     },
+            // },
+            // {
+            //     path: 'article',
+            //     name: 'article',
+            //     meta: {
+            //         requiresAuth: false,
+            //         show: true,
+            //         title: '文章管理',
+            //         icon: 'Edit',
+            //     },
+            //     children: [
+            //         {
+            //             path: 'list',
+            //             name: 'list',
+            //             meta: {
+            //                 requiresAuth: false,
+            //                 show: true,
+            //                 title: '文章列表',
+            //                 icon: 'Document',
+            //             },
+            //             component: () => import('@/views/article/index.vue'),
+            //         },
+            //         {
+            //             path: 'publish',
+            //             name: 'publish',
+            //             meta: {
+            //                 requiresAuth: false,
+            //                 show: true,
+            //                 title: '发布文章',
+            //                 icon: 'Document',
+            //             },
+            //             component: () => import('@/views/publish/index.vue'),
+            //         },
+            //         {
+            //             path: 'category',
+            //             name: 'category',
+            //             meta: {
+            //                 requiresAuth: false,
+            //                 show: true,
+            //                 title: '分类管理',
+            //                 icon: 'MessageBox',
+            //             },
+            //             component: () => import('@/views/category/index.vue'),
+            //         },
+            //     ],
+            // },
+            // {
+            //     path: 'web',
+            //     name: 'web',
+            //     meta: {
+            //         requiresAuth: false,
+            //         show: true,
+            //         title: '网站管理',
+            //         icon: 'Monitor',
+            //     },
+            //     children: [
+            //         {
+            //             path: 'set',
+            //             name: 'set',
+            //             meta: {
+            //                 requiresAuth: false,
+            //                 show: true,
+            //                 title: '网站设置',
+            //                 icon: 'Document',
+            //             },
+            //             component: () => import('@/views/webSet/index.vue'),
+            //         },
+            //         {
+            //             path: 'theme',
+            //             name: 'theme',
+            //             meta: {
+            //                 requiresAuth: false,
+            //                 show: true,
+            //                 title: '主题样式',
+            //                 icon: 'Document',
+            //             },
+            //             component: () => import('@/views/theme/index.vue'),
+            //         },
+            //         {
+            //             path: 'analysis',
+            //             name: 'analysis',
+            //             meta: {
+            //                 requiresAuth: false,
+            //                 show: true,
+            //                 title: '统计管理',
+            //                 icon: 'MessageBox',
+            //             },
+            //             component: () => import('@/views/analysis/index.vue'),
+            //         },
+            //     ],
+            // },
+            // {
+            //     path: 'tools',
+            //     name: 'tools',
+            //     component: () => import('@/views/tools/index.vue'),
+            //     meta: {
+            //         requiresAuth: false,
+            //         show: true,
+            //         title: '插件工具',
+            //         icon: 'SetUp',
+            //     },
+            // },
             {
                 path: 'setting',
                 name: 'setting',
@@ -197,7 +197,9 @@ router.beforeEach(async (to, from, next) => {
         if (gitToken) {
             // 存在token,就跳转到主页：记住上次的菜单和路由
             // localStorage.removeItem("menuIndex")
-            localStorage.getItem("menuRoute") ? next(localStorage.getItem("menuRoute")!) : next('/index/files')
+            localStorage.getItem('menuRoute')
+                ? next(localStorage.getItem('menuRoute')!)
+                : next('/index/files')
         } else {
             //否则就继续
             next()
