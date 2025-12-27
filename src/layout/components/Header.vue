@@ -1,5 +1,5 @@
 <template>
-    <div class="header" data-tauri-drag-region>
+    <div class="headerBox" data-tauri-drag-region>
         <div class="logo" data-tauri-drag-region>
             <el-popover placement="right" trigger="hover" :content="appVersion">
                 <template #reference>
@@ -203,11 +203,12 @@ const changeLang = (lang: string) => {
     background-color: var(--api-process) !important;
 }
 
-.header {
+.headerBox {
     height: 56px;
     border-bottom: solid 1px var(--el-menu-border-color);
     display: flex;
     justify-content: space-between;
+    padding: 0 10px;
 
     .logo {
         display: flex;
