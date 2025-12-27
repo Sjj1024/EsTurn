@@ -63,12 +63,12 @@
                     </span>
                     <template #dropdown>
                         <el-dropdown-menu>
-                            <el-dropdown-item @click="useTheme('dark')"
-                                >暗黑主题</el-dropdown-item
-                            >
-                            <el-dropdown-item @click="useTheme('light')"
-                                >亮白主题</el-dropdown-item
-                            >
+                            <el-dropdown-item @click="useTheme('dark')">
+                                暗黑主题
+                            </el-dropdown-item>
+                            <el-dropdown-item @click="useTheme('light')">
+                                亮白主题
+                            </el-dropdown-item>
                         </el-dropdown-menu>
                     </template>
                 </el-dropdown>
