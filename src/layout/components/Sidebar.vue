@@ -4,6 +4,7 @@
         unique-opened
         class="el-menu-vertical"
     >
+        <!-- <img :src="logo" class="logoImg" data-tauri-drag-region /> -->
         <div v-for="(item, index) in routes[1].children" :key="index">
             <el-sub-menu
                 :index="index.toString()"
@@ -46,6 +47,7 @@
 <script lang="ts" setup>
 import { routes } from '@/route/index'
 import { useRouter } from 'vue-router'
+import logo from '@/assets/image/logo.png'
 
 const router = useRouter()
 
@@ -65,6 +67,11 @@ const clickMenu = (menuPath: string, menuIndex: string) => {
 </script>
 
 <style scoped lang="scss">
+.logoImg {
+    width: 50px;
+    height: 50px;
+}
+
 .el-menu-vertical {
     // border-bottom: 1px solid rgb(188, 187, 187);
     background-color: unset;

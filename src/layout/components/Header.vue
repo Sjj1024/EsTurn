@@ -1,22 +1,6 @@
 <template>
     <div class="headerBox" data-tauri-drag-region>
         <div class="logo" data-tauri-drag-region>
-            <el-popover placement="right" trigger="hover" :content="appVersion">
-                <template #reference>
-                    <img
-                        v-if="userStore.theme === 'light'"
-                        :src="logoLight"
-                        class="logo-img"
-                        data-tauri-drag-region
-                    />
-                    <img
-                        v-else
-                        :src="logoDark"
-                        class="logo-img"
-                        data-tauri-drag-region
-                    />
-                </template>
-            </el-popover>
             <div class="api-pro">
                 <el-progress
                     :text-inside="true"
@@ -221,7 +205,7 @@ const changeLang = (lang: string) => {
 
         .api-pro {
             width: 150px;
-            margin-left: 20px;
+            // margin-left: 20px;
             cursor: pointer;
         }
     }
@@ -235,6 +219,10 @@ const changeLang = (lang: string) => {
             margin-right: 30px;
             margin-top: 4px;
             cursor: pointer;
+        }
+
+        :focus-visible {
+            outline: none !important;
         }
 
         .user-info {
