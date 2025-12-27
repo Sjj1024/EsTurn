@@ -1,17 +1,15 @@
 <template>
-    <div class="common-layout">
-        <el-container class="container">
-            <Sidebar class="bar"></Sidebar>
-            <el-container>
-                <el-header class="header">
-                    <Header></Header>
-                </el-header>
-                <el-main class="main">
-                    <AppMain></AppMain>
-                </el-main>
-            </el-container>
+    <el-container class="container">
+        <Sidebar class="bar"></Sidebar>
+        <el-container>
+            <el-header class="header">
+                <Header></Header>
+            </el-header>
+            <el-main class="main">
+                <AppMain></AppMain>
+            </el-main>
         </el-container>
-    </div>
+    </el-container>
 </template>
 
 <script setup lang="ts">
@@ -21,30 +19,20 @@ import AppMain from './components/AppMain.vue'
 </script>
 
 <style scoped lang="scss">
-.common-layout {
+.container {
     height: 100%;
+}
 
-    .container {
-        height: 100%;
-    }
+.header {
+    padding: 0;
+}
 
-    .header {
-        padding: 0;
-    }
+.main {
+    padding: 0 5px;
+}
 
-    .main {
-        padding: 0;
-    }
-
-    .bar-main {
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-
-        .bar {
-            // flex: 4;
-            height: 100%;
-        }
-    }
+.bar {
+    // flex: 4;
+    height: 100%;
 }
 </style>

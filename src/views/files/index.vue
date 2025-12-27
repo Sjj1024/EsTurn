@@ -1,6 +1,6 @@
 <template>
     <div
-        class="my-files"
+        class="myFiles"
         @click="closeMenu"
         @contextmenu.self="openDirMenu"
         v-loading="loading"
@@ -1793,8 +1793,7 @@ $column-gap: 16px;
     }
 }
 
-.my-files {
-    padding: 0 5px;
+.myFiles {
     position: relative;
     height: 90%;
 

@@ -44,6 +44,17 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import('@/views/cloudflare/index.vue'),
             },
             {
+                path: 'sqlite',
+                name: 'D1数据库',
+                meta: {
+                    requiresAuth: false,
+                    show: true,
+                    title: 'D1数据库',
+                    icon: 'Coin',
+                },
+                component: () => import('@/views/sqlite/index.vue'),
+            },
+            {
                 path: 'goods',
                 name: 'goods',
                 meta: {

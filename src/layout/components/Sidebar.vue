@@ -70,14 +70,6 @@ const clickMenu = (menuPath: string, menuIndex: string) => {
     height: 50px;
 }
 
-.el-menu-vertical {
-    // border-bottom: 1px solid rgb(188, 187, 187);
-    background-color: unset;
-    width: 160px;
-    overflow-y: auto;
-    user-select: none;
-}
-
 .el-menu-vertical::-webkit-scrollbar {
     width: 6px;
     height: 6px;
