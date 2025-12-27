@@ -645,17 +645,11 @@ const dropEvent = async (event: any) => {
                             uploadFileRaw.uploading = false
                             uploadFileRaw.path = res.data.content.path
                             uploadFileRaw.sha = res.data.content.sha
-                            uploadFileRaw.openLink =
-                                uploadType === 'picture'
-                                    ? `${uStore.fileCdn}${res.data.content.path}`
-                                    : `${uStore.gitIoCdn}/${res.data.content.path}`
-                            uploadFileRaw.downLink =
-                                uploadType === 'picture'
-                                    ? `${uStore.fileCdn}${res.data.content.path}`
-                                    : `${uStore.gitIoCdn}/${res.data.content.path}`
+                            uploadFileRaw.openLink = `${uStore.fileCdn}${res.data.content.html_url}`
+                            uploadFileRaw.downLink = `${uStore.fileCdn}${res.data.content.html_url}`
                             uploadType === 'picture' &&
                                 imgPreList.push(
-                                    `${uStore.fileCdn}${res.data.content.path}`
+                                    `${uStore.fileCdn}${res.data.content.html_url}`
                                 )
                             console.log('上传文件结果:', res, imgPreList)
                         } else {
@@ -1098,17 +1092,11 @@ const startUpFiles = async () => {
                             uploadFileRaw.uploading = false
                             uploadFileRaw.path = res.data.content.path
                             uploadFileRaw.sha = res.data.content.sha
-                            uploadFileRaw.openLink =
-                                uploadType === 'picture'
-                                    ? `${uStore.fileCdn}${res.data.content.path}`
-                                    : `${uStore.gitIoCdn}/${res.data.content.path}`
-                            uploadFileRaw.downLink =
-                                uploadType === 'picture'
-                                    ? `${uStore.fileCdn}${res.data.content.path}`
-                                    : `${uStore.gitIoCdn}/${res.data.content.path}`
+                            uploadFileRaw.openLink = `${uStore.fileCdn}${res.data.content.html_url}`
+                            uploadFileRaw.downLink = `${uStore.fileCdn}${res.data.content.html_url}`
                             uploadType === 'picture' &&
                                 imgPreList.push(
-                                    `${uStore.fileCdn}${res.data.content.path}`
+                                    `${uStore.fileCdn}${res.data.content.html_url}`
                                 )
                             console.log('上传文件结果:', res, imgPreList)
                         } else {
@@ -1795,7 +1783,7 @@ $column-gap: 16px;
 
 .myFiles {
     position: relative;
-    height: 90%;
+    height: 100%;
 
     .filemenu {
         position: absolute;
@@ -1819,11 +1807,6 @@ $column-gap: 16px;
 
 .tools-box {
     display: flex;
-    position: fixed;
-    z-index: 999;
-    top: 56px;
-    left: 162px;
-    right: 8px;
     background-color: var(--bg-color);
 
     .path-tool {
@@ -1900,19 +1883,13 @@ $column-gap: 16px;
     }
 }
 
-.file-box {
-    height: auto;
-    margin-top: 36px;
-    padding-bottom: 58px;
-}
-
 .file-tips {
     width: 180px;
 }
 
 .grid-style {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 120px);
 
     .upload-file {
         width: 120px;
@@ -1944,7 +1921,6 @@ $column-gap: 16px;
     .file-item {
         width: 110px;
         padding: 10px 15px;
-        margin: 5px;
         border-radius: 5px;
         position: relative;
 
