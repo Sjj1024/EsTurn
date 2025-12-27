@@ -2,76 +2,59 @@
     "build": {
         "beforeDevCommand": "pnpm dev",
         "beforeBuildCommand": "pnpm build",
-        "devPath": "http://localhost:1420",
-        "distDir": "../dist",
-        "withGlobalTauri": false
+        "frontendDist": "../dist",
+        "devUrl": "http://localhost:1420"
     },
-    "package": {
-        "productName": "FileHub",
-        "version": "0.0.1"
-    },
-    "tauri": {
-        "allowlist": {
-            "all": true,
-            "http": {
-                "scope": ["http://**", "https://**"]
+    "bundle": {
+        "active": true,
+        "targets": "all",
+        "windows": {
+            "webviewInstallMode": {
+                "type": "embedBootstrapper"
             },
-            "shell": {
-                "all": false,
-                "open": true
-            },
-            "fs": {
-                "all": true,
-                "scope": ["*", "$DOWNLOAD/*"]
-            },
-            "window": {
-                "all": true
+            "wix": {
+                "language": "zh-CN"
             }
         },
-        "bundle": {
-            "active": true,
-            "targets": "all",
-            "identifier": "com.filehub.dev",
-            "icon": [
-                "icons/32x32.png",
-                "icons/128x128.png",
-                "icons/128x128@2x.png",
-                "icons/icon.icns",
-                "icons/icon.ico"
-            ],
-            "shortDescription": "万物可存储",
-            "longDescription": "只要你想，没有不可以",
-            "windows": {
-                "webviewInstallMode": {
-                    "type": "embedBootstrapper"
-                },
-                "wix": {
-                    "language": "zh-CN"
-                }
-            }
-        },
-        "security": {
-            "csp": null
-        },
+        "icon": [
+            "icons/32x32.png",
+            "icons/128x128.png",
+            "icons/128x128@2x.png",
+            "icons/icon.icns",
+            "icons/icon.ico"
+        ],
+        "shortDescription": "万物可存储",
+        "longDescription": "只要你想，没有不可以",
+        "createUpdaterArtifacts": "v1Compatible"
+    },
+    "productName": "FileHub",
+    "mainBinaryName": "FileHub",
+    "version": "0.0.1",
+    "identifier": "com.filehub.dev",
+    "plugins": {
         "updater": {
-            "active": true,
+            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEMxNDAyRUI1NjlDQThCRUYKUldUdmk4cHB0UzVBd2FFbk91T1FXSnVWdERRK09tY0dSM2tyV01Tb2pIUVM2ME5qRDJuZGMwalEK",
             "endpoints": [
                 "https://sjj1024.github.io/DataHub/FileData/update/index.json"
-            ],
-            "dialog": false,
-            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEMxNDAyRUI1NjlDQThCRUYKUldUdmk4cHB0UzVBd2FFbk91T1FXSnVWdERRK09tY0dSM2tyV01Tb2pIUVM2ME5qRDJuZGMwalEK"
-        },
+            ]
+        }
+    },
+    "app": {
+        "withGlobalTauri": false,
         "windows": [
             {
                 "label": "customization",
                 "fullscreen": false,
                 "resizable": true,
                 "title": "FileHub",
-                "fileDropEnabled": false,
                 "width": 1031,
                 "height": 580,
-                "center": true
+                "center": true,
+                "useHttpsScheme": true
             }
-        ]
+        ],
+        "security": {
+            "csp": null
+        }
     }
 }

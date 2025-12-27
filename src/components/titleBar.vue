@@ -18,11 +18,12 @@
 
 <script setup lang='ts'>
 import { onMounted } from 'vue'
-import { appWindow } from '@tauri-apps/api/window'
+import { getCurrentWebviewWindow } from '@tauri-apps/api/webviewWindow'
 import commonApi from '@/apis/common'
-import { open } from '@tauri-apps/api/shell';
+import { open } from '@tauri-apps/plugin-shell';
 import { ElMessageBox } from 'element-plus'
 import { getVersion } from '@tauri-apps/api/app';
+const appWindow = getCurrentWebviewWindow()
 
 // 获取更新信息等
 commonApi.getHubInfo().then(async res => {

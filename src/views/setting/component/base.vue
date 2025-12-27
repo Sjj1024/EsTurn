@@ -60,7 +60,7 @@ import { ref } from 'vue'
 import useTheme from '@/hooks/theme'
 import { useUserStore } from '@/stores/user'
 import { useI18n } from 'vue-i18n'
-import { open } from '@tauri-apps/api/dialog'
+import { open } from '@tauri-apps/plugin-dialog'
 
 
 const { locale } = useI18n()

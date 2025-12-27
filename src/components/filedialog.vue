@@ -69,8 +69,9 @@ import Hls from 'hls.js'
 import Flv from 'flv.js'
 import '@/utils/webtorrent.min.js'
 import DPlayer from 'dplayer'
-import { appWindow } from '@tauri-apps/api/window'
+import { getCurrentWebviewWindow } from '@tauri-apps/api/webviewWindow'
 import musicBg from '@/assets/image/musicBg.gif'
+const appWindow = getCurrentWebviewWindow()
 /**
  * 可以用于播放的视频
  * https://stream.mux.com/UZMwOY6MgmhFNXLbSFXAuPKlRPss5XNA.m3u8

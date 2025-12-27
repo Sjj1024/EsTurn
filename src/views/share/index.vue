@@ -251,9 +251,10 @@ import { ElMessage, ElMessageBox, ElTable } from 'element-plus'
 import type { fileRes } from "@/utils/useTypes"
 import { useUserStore } from '@/stores/user'
 import fileApi from "@/apis/files"
-import { writeBinaryFile } from '@tauri-apps/api/fs';
-import { path, dialog } from '@tauri-apps/api';
+import { writeBinaryFile } from '@tauri-apps/plugin-fs';
+import { path,  } from '@tauri-apps/api';
 import { useFileStore } from '@/stores/files'
+import * as dialog from "@tauri-apps/plugin-dialog"
 
 
 const userStore = useUserStore()

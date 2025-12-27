@@ -1,5 +1,5 @@
 import http from '@/utils/request'
-import { ResponseType } from '@tauri-apps/api/http'
+import { ResponseType } from '@tauri-apps/plugin-http'
 
 export default {
     gitRatelimit() {

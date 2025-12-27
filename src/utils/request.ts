@@ -1,6 +1,6 @@
-import { fetch } from '@tauri-apps/api/http'
+import { fetch } from '@tauri-apps/plugin-http'
 import { useUserStore } from '@/stores/user'
-import { Body } from '@tauri-apps/api/http'
+import { Body } from '@tauri-apps/plugin-http'
 
 const baseURL = import.meta.env.VITE_GITHUB_API
 const userStore = useUserStore()

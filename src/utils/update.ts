@@ -2,9 +2,9 @@ import {
     checkUpdate,
     installUpdate,
     onUpdaterEvent,
-} from '@tauri-apps/api/updater'
-import { relaunch } from '@tauri-apps/api/process'
-import { confirm } from '@tauri-apps/api/dialog'
+} from '@tauri-apps/plugin-updater'
+import { relaunch } from '@tauri-apps/plugin-process'
+import { confirm } from '@tauri-apps/plugin-dialog'
 
 onUpdaterEvent(({ error, status }) => {
     // This will log all updater events, including status updates and errors.

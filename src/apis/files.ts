@@ -1,6 +1,6 @@
 import http from '@/utils/request'
 import { useUserStore } from '@/stores/user'
-import { ResponseType } from '@tauri-apps/api/http'
+import { ResponseType } from '@tauri-apps/plugin-http'
 const userStore = useUserStore()
 // 先判断仓库FileHub是否存在，存在就获取文件，不存在就frok然后再获取
 
