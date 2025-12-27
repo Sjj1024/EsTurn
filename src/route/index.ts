@@ -55,6 +55,17 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import('@/views/sqlite/index.vue'),
             },
             {
+                path: 'supabase',
+                name: 'Supabase',
+                meta: {
+                    requiresAuth: false,
+                    show: true,
+                    title: 'supabase',
+                    icon: 'OfficeBuilding',
+                },
+                component: () => import('@/views/supabase/index.vue'),
+            },
+            {
                 path: 'goods',
                 name: 'goods',
                 meta: {
