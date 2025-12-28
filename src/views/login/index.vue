@@ -36,7 +36,6 @@
                     </template>
                 </el-dropdown>
             </div>
-            <TitleBar></TitleBar>
         </div>
     </div>
     <div
@@ -205,7 +204,6 @@ import { useUserStore } from '@/stores/user'
 import loginApi from '@/apis/user'
 import commonApi from '@/apis/common'
 import { rsaDecode, rsaEncode } from '@/utils/encode'
-import TitleBar from '@/components/titleBar.vue'
 
 const userStore = useUserStore()
 
@@ -520,7 +518,7 @@ const registUser = async () => {
 </script>
 
 <style scoped lang="scss">
-@use '@/style/index.scss' as *;
+@import '@/style/login.css';
 
 .login-info {
     margin-top: 10px;

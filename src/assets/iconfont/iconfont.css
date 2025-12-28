@@ -15,6 +15,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    cursor: pointer;
 }
 
 .icon-list:before {
