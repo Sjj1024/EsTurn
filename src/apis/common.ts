@@ -1,5 +1,4 @@
 import http from '@/utils/request'
-import { ResponseType } from '@tauri-apps/plugin-http'
 
 export default {
     gitRatelimit() {
@@ -36,7 +35,6 @@ export default {
             `https://sjj1024.github.io/DataHub/FileData/update/index.json`,
             {
                 method: 'get',
-                responseType: ResponseType.JSON,
             }
         )
     },

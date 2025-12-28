@@ -43,7 +43,7 @@
         "withGlobalTauri": false,
         "windows": [
             {
-                "label": "customization",
+                "label": "main",
                 "fullscreen": false,
                 "resizable": true,
                 "title": "FileHub",

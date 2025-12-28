@@ -1,6 +1,5 @@
 import { fetch } from '@tauri-apps/plugin-http'
 import { useUserStore } from '@/stores/user'
-import { Body } from '@tauri-apps/plugin-http'
 
 const baseURL = import.meta.env.VITE_GITHUB_API
 const userStore = useUserStore()
@@ -39,19 +38,15 @@ const http = async (url: string, options: any = {}) => {
             Authorization: userStore.gitToken,
         }
     if (options?.body) {
-        options.body = Body.json(options.body)
-        if (options.body.type === BODY_TYPE.Form) {
+        if (options.body?.type === BODY_TYPE.Form) {
             options.headers['Content-Type'] = 'multipart/form-data'
         }
     }
     options = { ...commonOptions, ...options }
     console.log('request-------', buildFullPath(baseURL, url), options)
     return fetch(buildFullPath(baseURL, url), options)
-        .then(({ status, data }) => {
-            if (status >= 200 && status < 500) {
-                return { status, data }
-            }
-            return Promise.reject({ status, data })
+        .then((response) => {
+            return response.json()
         })
         .catch((err) => {
             console.error(err)
