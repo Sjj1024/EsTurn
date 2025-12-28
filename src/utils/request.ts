@@ -46,14 +46,14 @@ const http = async (url: string, options: any = {}) => {
     console.log('request-------', buildFullPath(baseURL, url), options)
     return fetch(buildFullPath(baseURL, url), options)
         .then((response) => {
-            return response.json()
+            if (response.status >= 200 && response.status < 500) {
+                return response.json()
+            }
+            return Promise.reject(response.json())
         })
         .catch((err) => {
             console.error(err)
             return Promise.reject(err)
-        })
-        .finally(() => {
-            // 发送接口速率
         })
 }
 

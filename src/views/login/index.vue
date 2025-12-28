@@ -266,13 +266,12 @@ const loginForm: loginType = reactive({
 const userNameLogin = async (token: string) => {
     loadingBtn.value = true
     const res = await loginApi.getUserInfo(`${token}`)
-    if (res.status === 200) {
-        userStore.setGitInfo(`Bearer ${token}`, res.data)
+    console.log('res-----', res)
+    if (res) {
+        userStore.setGitInfo(`Bearer ${token}`, res)
         // 直接用token登陆，需要校验是否已经有Filehub仓库存在了：用的话直接登陆，没有的话，需要先创建Filehub
         loginApi
-            .checkReady(
-                `/repos/${(res.data as any).login}/FileHub/contents/README.md`
-            )
+            .checkReady(`/repos/${res.login}/FileHub/contents/README.md`)
             .then((checkRes) => {
                 // console.log("checkReady----", checkRes);
                 if (checkRes.status === 200) {
@@ -280,7 +279,7 @@ const userNameLogin = async (token: string) => {
                     router.push('/index/files')
                     // console.log("user----", res);
                     ElMessage({
-                        message: `欢迎回来：${(res.data as any).login}`,
+                        message: `欢迎回来：${res.login}`,
                         type: 'success',
                     })
                 } else {
@@ -293,13 +292,11 @@ const userNameLogin = async (token: string) => {
                     const timer = setInterval(() => {
                         loginApi
                             .checkReady(
-                                `/repos/${
-                                    (res.data as any).login
-                                }/FileHub/contents/README.md`
+                                `/repos/${res.login}/FileHub/contents/README.md`
                             )
                             .then((checkRes) => {
-                                // console.log("checkReady----", checkRes);
-                                if (checkRes.status === 200) {
+                                console.log('checkReady----', checkRes)
+                                if (checkRes) {
                                     clearInterval(timer)
                                     loadingBtn.value = false
                                     router.push('/index/files')
@@ -313,14 +310,14 @@ const userNameLogin = async (token: string) => {
                                     }
                                     commonApi
                                         .creatGitPage(
-                                            (res.data as any).login,
+                                            res.login,
                                             'FileHub',
                                             loginForm.gitToken,
                                             gitPageBody
                                         )
                                         .then((gitPageRes) => {
                                             // console.log("creatGitpage 成功");
-                                            if (gitPageRes.status === 201) {
+                                            if (gitPageRes) {
                                                 ElMessage({
                                                     message:
                                                         'FileHub文件存储库初始化成功',
@@ -366,7 +363,7 @@ const firstRegistInit = async (token: string) => {
     }
     // 使用Filehub作为模板创建一个新仓库
     const frokRes = await loginApi.creatFileHub(token, payload)
-    if (frokRes.status === 201) {
+    if (frokRes) {
         // console.log("Creat FileHub 成功");
         // frok成功后，创建gitpage
     } else {
